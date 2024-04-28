@@ -10,7 +10,15 @@ public class LightBoard
    */
   public LightBoard(int numRows, int numCols)
   {
-    /* to be implemented in part (a) */
+    for(int numRows = 0; numRows < lights.length; numRows++){
+      for(int numCols = 0; numCols < lights[numRows].length; numCols++){
+        if(Math.random() <= .4){
+          lights[numRows][numCols] == true;
+        }
+        else lights[numRows][numCols] == false;
+      }
+    }
+    return lights;
 
   }
 
@@ -21,8 +29,18 @@ public class LightBoard
   public boolean evaluateLight(int row, int col)
   {
     /* to be implemented in part (b) */
-   
- 
+   for(int row = 0; row < light.length; row++){
+     for(int col = 0; col < light[row].length; col++){
+    if(light[row][col] && col % 2 == 0){
+      return false;
+    }
+       else if(light[row][col] == false && col % 3 == 0 ){
+         return true;
+       }
+       else return light[row][col];
+     }
+   }
+
   }
   public boolean[][] getLights()
   {
