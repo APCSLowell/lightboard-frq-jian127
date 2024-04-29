@@ -29,17 +29,18 @@ public class LightBoard
   public boolean evaluateLight(int row, int col)
   {
     /* to be implemented in part (b) */
-   for(int row = 0; row < lights.length; row++){
-     for(int col = 0; col < lights[row].length; col++){
-    if(lights[row][col] && col % 2 == 0){
+   int count = 0;
+    for(int r = 0; r < lights.length;r++){
+      if(lights[r][col] == true)
+        count++;
+    }
+    if(lights[row][col] && count % 2 == 0){
       return false;
     }
-       else if(lights[row][col] == false && col % 3 == 0 ){
-         return true;
-       }
-       else return lights[row][col];
-     }
-   }
+    if(lights[row][col] == false && count % 3 == 0){
+      return true;
+    }
+    return lights[row][col]; 
 
   }
   public boolean[][] getLights()
