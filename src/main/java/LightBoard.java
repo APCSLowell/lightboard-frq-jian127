@@ -10,15 +10,15 @@ public class LightBoard
    */
   public LightBoard(int numRows, int numCols)
   {
-    for(int numRows = 0; numRows < lights.length; numRows++){
-      for(int numCols = 0; numCols < lights[numRows].length; numCols++){
-        if(Math.random() <= .4){
-          lights[numRows][numCols] == true;
+    lights = new boolean[numRows][numCols];
+    for(int r = 0; r < lights.length; r++){
+      for(int c = 0;c < lights[c].length; c++){
+        if(Math.random() < .4){
+          lights[r][c] == true;
         }
-        else lights[numRows][numCols] == false;
+        else lights[r][c] == false;
       }
     }
-    return lights;
 
   }
 
